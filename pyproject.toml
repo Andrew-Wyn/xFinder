@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "xfinder"
 version = "0.2.3"
 dependencies = [
-  "torch==2.3.1",
+  "torch>=2.3.1",
   "transformers>=4.39.0",
   "tqdm>=4.65.0",
   "huggingface_hub",
