@@ -71,11 +71,11 @@ class Extractor:
             self.tokenizer = self.model = None
 
     def _initialize_local_model(self) -> Tuple[AutoTokenizer, AutoModelForCausalLM]:
-        if not os.path.exists(self.model_path_or_url):
-            logging.info(
-                f"Model not found locally. Downloading model {self.model_name} from Huggingface.")
-            os.system(
-                f'huggingface-cli download --resume-download IAAR-Shanghai/{self.model_name} --local-dir {self.model_path_or_url}')
+        #if not os.path.exists(self.model_path_or_url):
+        #    logging.info(
+        #        f"Model not found locally. Downloading model {self.model_name} from Huggingface.")
+        #    os.system(
+        #        f'huggingface-cli download --resume-download IAAR-Shanghai/{self.model_name} --local-dir {self.model_path_or_url}')
         tokenizer = AutoTokenizer.from_pretrained(
             self.model_path_or_url, use_fast=False, trust_remote_code=True)
         model = AutoModelForCausalLM.from_pretrained(
