@@ -35,6 +35,9 @@ class Comparator:
             if type(extracted) != str: # bugfix for Categorical Labels
                 extracted = str(extracted)
 
+            if type(correct) != str: # bugfix for Categorical Labels
+                extracted = str(correct)
+
             if extracted.strip().rstrip(".").lower() == correct.strip().rstrip(
                     ".").lower():
                 right_flag = 1
