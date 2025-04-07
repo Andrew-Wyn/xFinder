@@ -32,6 +32,9 @@ class Comparator:
             if self.math_evaluator.is_equiv(extracted, correct) == True:
                 right_flag = 1
         else:
+            if type(extracted) != str: # bugfix for Categorical Labels
+                extracted = str(extracted)
+
             if extracted.strip().rstrip(".").lower() == correct.strip().rstrip(
                     ".").lower():
                 right_flag = 1
