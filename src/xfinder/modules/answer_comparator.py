@@ -36,7 +36,7 @@ class Comparator:
                 extracted = str(extracted)
 
             if type(correct) != str: # bugfix for Categorical Labels
-                extracted = str(correct)
+                correct = str(correct)
 
             if extracted.strip().rstrip(".").lower() == correct.strip().rstrip(
                     ".").lower():
